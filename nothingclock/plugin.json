@@ -3,7 +3,7 @@
   "name": "Nothing Clock",
   "description": "Nothing inspired desktop clock",
   "version": "1.0.0",
-  "author": "HeX",
+  "author": "Sayan",
   "type": "desktop",
   "capabilities": ["desktop-widget", "clock"],
   "component": "./NothingClockWidget.qml",
