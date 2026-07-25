@@ -1,0 +1,17 @@
+{
+  "id": "nothingClock",
+  "name": "Nothing Clock",
+  "description": "Nothing inspired desktop clock",
+  "version": "1.0.0",
+  "author": "HeX",
+  "type": "desktop",
+  "capabilities": ["desktop-widget", "clock"],
+  "component": "./NothingClockWidget.qml",
+  "icon": "schedule",
+  "settings": "./NothingClockSettings.qml",
+  "requires_dms": ">=1.2.0",
+  "permissions": [
+    "settings_read",
+    "settings_write"
+  ]
+}
