@@ -16,6 +16,12 @@ Built for [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell)
 
 Nothing Clock brings the dot-matrix look of Nothing OS to your desktop — six different clock faces, fully customizable, so you can find the one that fits your setup.
 
+## 📦 Installation
+
+
+```dms plugins install nothingClock```
+
+
 ## ✨ Styles
 
 Pick whichever look suits your desktop best, right from the widget's settings.
@@ -29,13 +35,6 @@ Pick whichever look suits your desktop best, right from the widget's settings.
 | **Stacks** | Day of the week and time up top, with the date and month laid out as separate cards below. |
 | **Orbit** | Three quiet concentric rings, each carrying a dot that traces the hour, minute, and second. |
 
-
-
-## 📦 Installation
-
-dms plugins install nothingClock
-
-```dms plugins install nothingClock```
 
 
 ## ✅ Requirements
