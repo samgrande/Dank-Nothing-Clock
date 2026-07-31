@@ -30,26 +30,13 @@ Pick whichever look suits your desktop best, right from the widget's settings.
 | **Orbit** | Three quiet concentric rings, each carrying a dot that traces the hour, minute, and second. |
 
 
-## 🎛️ Customize it your way
-
-Everything below is adjustable from the widget's settings panel — no config files to edit by hand.
-
-- **Clock Style** — switch between any of the 6 faces above
-- **Show Date** — show or hide the date row
-- **Time Format** — 12-hour or 24-hour (on the Digital and Split styles)
-- **Accent Color** — match your DMS theme's primary or secondary color, or pick your own custom color
-- **Background Opacity** — dial the widget's background transparency up or down to blend with your wallpaper
 
 ## 📦 Installation
 
-1. Copy the plugin folder into your DMS plugins directory:
-   ```
-   ~/.config/DankMaterialShell/plugins/
-   ```
-2. Restart DMS (or reload plugins, if your setup supports it).
-3. Open the desktop widget picker and add **Nothing Clock**.
+dms plugins install nothingClock
 
-That's it — no additional setup required.
+```dms plugins install nothingClock```
+
 
 ## ✅ Requirements
 
