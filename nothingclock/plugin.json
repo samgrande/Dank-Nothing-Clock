@@ -1,8 +1,8 @@
 {
   "id": "nothingClock",
   "name": "Nothing Clock",
-  "description": "Nothing inspired desktop clock",
-  "version": "1.0.0",
+  "description": "A NothingOS inspired desktop clock",
+  "version": "1.1.0",
   "author": "Sayan",
   "type": "desktop",
   "capabilities": ["desktop-widget", "clock"],

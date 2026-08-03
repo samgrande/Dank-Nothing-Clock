@@ -28,6 +28,19 @@ PluginSettings {
         defaultValue: true
     }
 
+    SelectionSetting {
+        settingKey: "themeMode"
+        label: "Theme"
+        description: "Switches background, text, and card colors between dark and light."
+
+        options: [
+            { label: "Dark", value: "dark" },
+            { label: "Light", value: "light" }
+        ]
+
+        defaultValue: "dark"
+    }
+
     // Only affects Digital and Split — it swaps the AM/PM box in the
     // date row on/off and switches the hour digits between 12/24-hour.
     // Digital (Cards) always shows 12-hour; Analog, Analog (Classic),

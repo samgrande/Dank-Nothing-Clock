@@ -32,14 +32,26 @@ DesktopPluginComponent {
 
     readonly property int contentMargin: 20
 
+    // Light/dark toggle. "dark" (default) keeps the original look;
+    // "light" flips background/text/surface colors for a light card.
+    property string themeMode: pluginData.themeMode ?? "dark"
+    readonly property bool isLight: themeMode === "light"
+
     // NOTE: swap these for Theme.* tokens once you confirm the exact
     // property names in your Theme.qml (e.g. Theme.surfaceContainer,
     // Theme.onSurface). Kept as local constants for now so the widget
     // is self-contained and easy to preview.
-    readonly property color colorBg: "#000000"
-    readonly property color colorBorder: "#1A1A1A"
-    readonly property color colorPrimary: "#FFFFFF"
-    readonly property color colorSecondary: "#808080"
+    readonly property color colorBg: root.isLight ? "#FFFFFF" : "#000000"
+    readonly property color colorBorder: root.isLight ? "#E0E0E0" : "#1A1A1A"
+    readonly property color colorPrimary: root.isLight ? "#000000" : "#FFFFFF"
+    readonly property color colorSecondary: root.isLight ? "#6B6B6B" : "#808080"
+    // Used for the elevated "card" surfaces: StatCard fill, Orbit's
+    // center disc, Analog Classic's watch face — was hardcoded #141414
+    // / #181818 in several places before.
+    readonly property color colorSurface: root.isLight ? "#F0F0F0" : "#141414"
+    // Orbit's faint ring guides — was hardcoded translucent white,
+    // invisible against a light background. Derive from primary instead.
+    readonly property color colorRingGuide: Qt.rgba(root.colorPrimary.r, root.colorPrimary.g, root.colorPrimary.b, 0.12)
 
     // Accent color source: "primary"/"secondary" pull from the DMS
     // theme, "custom" uses the hex picked below. NOTE: Theme.primary /
@@ -232,7 +244,7 @@ DesktopPluginComponent {
         required property string value
 
         radius: 14
-        color: "#141414"
+        color: root.colorSurface
         border.width: 1
         border.color: root.colorBorder
 
@@ -495,7 +507,7 @@ DesktopPluginComponent {
                     Rectangle {
                         anchors.fill: parent
                         radius: width / 2
-                        color: "#181818"
+                        color: root.colorSurface
                         border.width: 1
                         border.color: root.colorBorder
                     }
@@ -551,7 +563,7 @@ DesktopPluginComponent {
                             height: dSize
                             radius: 1
                             rotation: 45
-                            color: "#181818"
+                            color: root.colorSurface
                             border.width: 1
                             border.color: root.colorPrimary
                             anchors.horizontalCenter: parent.horizontalCenter
@@ -585,7 +597,7 @@ DesktopPluginComponent {
                             height: dSize
                             radius: 1
                             rotation: 45
-                            color: "#181818"
+                            color: root.colorSurface
                             border.width: 1
                             border.color: root.colorSecondary
                             anchors.horizontalCenter: parent.horizontalCenter
@@ -774,7 +786,7 @@ DesktopPluginComponent {
                         radius: width / 2
                         color: "transparent"
                         border.width: 1
-                        border.color: Qt.rgba(1, 1, 1, 0.12)
+                        border.color: root.colorRingGuide
                     }
                     Rectangle {
                         anchors.centerIn: parent
@@ -783,7 +795,7 @@ DesktopPluginComponent {
                         radius: width / 2
                         color: "transparent"
                         border.width: 1
-                        border.color: Qt.rgba(1, 1, 1, 0.12)
+                        border.color: root.colorRingGuide
                     }
                     Rectangle {
                         anchors.centerIn: parent
@@ -792,7 +804,7 @@ DesktopPluginComponent {
                         radius: width / 2
                         color: "transparent"
                         border.width: 1
-                        border.color: Qt.rgba(1, 1, 1, 0.12)
+                        border.color: root.colorRingGuide
                     }
 
                     // Center disc
@@ -801,7 +813,7 @@ DesktopPluginComponent {
                         width: orbitFace.coreRadius * 2
                         height: width
                         radius: width / 2
-                        color: "#141414"
+                        color: root.colorSurface
                         border.width: 1
                         border.color: root.colorBorder
                     }
